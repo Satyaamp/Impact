@@ -15,7 +15,7 @@ public class normal_order_digits {
         }
 
 
-        // System.out.println(rev);
+        System.out.println(rev);
         
     }
 }
