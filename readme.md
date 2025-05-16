@@ -141,8 +141,8 @@ for(int i = 1; i <= digit; i++) {
 
 **Opposite Right Triangle:**
 ```
-    *
-   * *
+      *
+    * *
   * * *
 ```
 
