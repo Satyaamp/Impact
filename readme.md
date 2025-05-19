@@ -181,13 +181,16 @@ for(int i = 0; i < 5; i++) {
 
 ---
 
-Here is a complete **GitHub README.md** file for **Bit Manipulation in Java**, covering:
+# 🔹 For Signed 32-bit Integer (includes negative numbers):
+Minimum = -2³¹ = -2,147,483,648
 
-* Bitwise Operators
-* Check/Set/Clear/Toggle ith bit
-* Count set bits (with and without modulus)
-* With one example for each
+Maximum = 2³¹ - 1 = 2,147,483,647
 
+
+```java
+System.out.println(Integer.MIN_VALUE);  // -2147483648
+System.out.println(Integer.MAX_VALUE);  // 2147483647
+```
 ---
 
 ###  Bit Manipulation in Java
@@ -212,6 +215,31 @@ Bit manipulation is a powerful technique in competitive programming and system-l
 
 ---
 
+## 🔢 Shift Operation Formulas
+
+- 🔹 **Right Shift**: `n >> k` → `n / 2^k`
+- 🔹 **Left Shift**: `n << k` → `n * 2^k`
+
+---
+## 🔁 Swap Two Numbers Using XOR
+## #📌 Code
+```java
+int a = 5, b = 7;
+
+a = a ^ b;
+b = a ^ b;
+a = a ^ b;
+
+Output:
+a = 7
+b = 5
+
+🧠 How it Works:
+XOR toggles bits:
+a ^ b stores combined info.
+Then recover values using XOR logic.
+````
+
 ## 1️⃣ Check if the ith Bit is Set
 
 ### 📌 Code
@@ -219,7 +247,19 @@ Bit manipulation is a powerful technique in competitive programming and system-l
 int n = 5;  // 0101
 int i = 2;
 
+
+// Using Left Shift
 if ((n & (1 << i)) != 0) {
+    System.out.println("Set bit");
+} else {
+    System.out.println("Unset bit");
+}
+````
+
+```java
+// Using Right Shift
+
+if(1 & (n >> i) != 0){
     System.out.println("Set bit");
 } else {
     System.out.println("Unset bit");
@@ -339,33 +379,89 @@ Toggle 1st bit of 5 → `0101 ^ 0010 = 0111` → Output: `7`
 
 ---
 
-## 🚀 Summary Table
+---
 
-| Operation      | Code Syntax                                           |            |
-| -------------- | ----------------------------------------------------- | ---------- |
-| Check ith bit  | `(n & (1 << i)) != 0`                                 |            |
-| Set ith bit    | \`n = n                                               | (1 << i)\` |
-| Clear ith bit  | `n = n & ~(1 << i)`                                   |            |
-| Toggle ith bit | `n = n ^ (1 << i)`                                    |            |
-| Count set bits | `while(n > 0) { n & 1; n>>=1; }` or `Brian Kernighan` |            |
+### ❓ Why Bit Manipulation?
+
+* **Fast**: Bitwise operations are low-level and faster than arithmetic.
+* **Memory Efficient**: Use less space (e.g., store flags in bits).
+* **Useful in Interviews**: Solves problems like set bits, power of 2, toggling bits.
+* **No Extra Space**: Swap values, check odd/even, etc., without extra variables.
+* **Used in Real Life**: OS, cryptography, compression, embedded systems.
 
 ---
 
-## 📚 License
+🧠 **Example**:
 
-This repository is licensed under the MIT License.
-
----
-
-## 🤝 Contributing
-
-Pull requests and feedback are welcome! Feel free to fork and improve.
-
+```java
+if ((n & 1) == 1) System.out.println("Odd"); // Check if number is odd
 ```
 
+```java
+// To multiply a number by 2:
+
+int result = n << 1;  // same as n * 2
+```
+
+
+**commonly asked interview questions related to bit manipulation**, along with a short description of each:
+
 ---
 
-Let me know if you'd like:
-- A matching Java `.java` file too ✅  
-- Or I can push this to a GitHub repo for you if you provide access ✍️
-```
+### 🔹 **Basic Level**
+
+1. **Count the number of set bits (1s) in an integer.**
+   🔸 Hint: Use `n & 1` and right shift, or Brian Kernighan’s Algorithm.
+
+2. **Check if a number is a power of 2.**
+   🔸 Trick: `n > 0 && (n & (n - 1)) == 0`
+
+3. **Determine if a number is even or odd using bits.**
+   🔸 Use: `n & 1` → 1 = Odd, 0 = Even
+
+4. **Toggle the ith bit of a number.**
+   🔸 Use: `n ^ (1 << i)`
+
+5. **Check if the ith bit is set.**
+   🔸 Use: `(n & (1 << i)) != 0`
+
+---
+
+### 🔹 **Intermediate Level**
+
+6. **Clear the ith bit of a number.**
+   🔸 Use: `n & ~(1 << i)`
+
+7. **Set the ith bit of a number.**
+   🔸 Use: `n | (1 << i)`
+
+8. **Count total set bits from 1 to N.**
+   🔸 Use loop or prefix approach
+
+9. **Swap two numbers using XOR.**
+   🔸 Trick: `a = a ^ b; b = a ^ b; a = a ^ b;`
+
+10. **Check if two numbers have opposite signs.**
+    🔸 Use: `(a ^ b) < 0`
+
+---
+
+### 🔹 **Advanced/Tricky**
+
+11. **Find the only non-repeating number in an array where all others repeat twice.**
+    🔸 Use XOR of all elements.
+
+12. **Find two non-repeating numbers in an array where others repeat twice.**
+    🔸 Use XOR and bitwise partitioning.
+
+13. **Find the missing number in a range 0 to n.**
+    🔸 Use: XOR of all numbers vs XOR of array elements.
+
+14. **Find the single number in an array where others appear three times.**
+    🔸 Use bit counting at each position (0-31)
+
+15. **Generate all subsets of a set using bits.**
+    🔸 Use: Bitmask from `0` to `(1 << n) - 1`
+
+---
+
