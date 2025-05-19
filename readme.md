@@ -181,3 +181,191 @@ for(int i = 0; i < 5; i++) {
 
 ---
 
+Here is a complete **GitHub README.md** file for **Bit Manipulation in Java**, covering:
+
+* Bitwise Operators
+* Check/Set/Clear/Toggle ith bit
+* Count set bits (with and without modulus)
+* With one example for each
+
+---
+
+### ✅ `README.md` – Bit Manipulation in Java
+
+````markdown
+# 🧠 Bit Manipulation in Java
+
+Bit manipulation is a powerful technique in competitive programming and system-level development. It allows you to perform operations directly on the bits of integers, making computations faster and memory efficient.
+
+---
+
+## ⚙️ Bitwise Operators
+
+| Operator | Description           | Example (a = 5, b = 3) | Result (in binary) |
+|----------|------------------------|------------------------|---------------------|
+| `&`      | AND                    | `a & b` = `5 & 3`      | `0101 & 0011 = 0001` (1) |
+| `|`      | OR                     | `a | b` = `5 | 3`      | `0101 | 0011 = 0111` (7) |
+| `^`      | XOR                    | `a ^ b` = `5 ^ 3`      | `0101 ^ 0011 = 0110` (6) |
+| `~`      | NOT                    | `~a` = `~5`            | `~0101 = 1010` (-6 in 2's comp) |
+| `<<`     | Left Shift             | `a << 1` = `5 << 1`    | `1010` (10) |
+| `>>`     | Right Shift            | `a >> 1` = `5 >> 1`    | `0010` (2) |
+
+---
+
+## 1️⃣ Check if the ith Bit is Set
+
+### 📌 Code
+```java
+int n = 5;  // 0101
+int i = 2;
+
+if ((n & (1 << i)) != 0) {
+    System.out.println("Set bit");
+} else {
+    System.out.println("Unset bit");
+}
+````
+
+### 📎 Example
+
+`n = 5 (0101)` → checking `2nd` bit → result: ✅ Set Bit
+
+---
+
+## 2️⃣ Set the ith Bit (Make it 1)
+
+### 📌 Code
+
+```java
+int n = 5;  // 0101
+int i = 1;
+
+n = n | (1 << i);
+System.out.println(n);
+```
+
+### 📎 Example
+
+Set 1st bit of 5 → `0101 | 0010 = 0111` → Output: `7`
+
+---
+
+## 3️⃣ Clear the ith Bit (Make it 0)
+
+### 📌 Code
+
+```java
+int n = 7;  // 0111
+int i = 2;
+
+n = n & ~(1 << i);
+System.out.println(n);
+```
+
+### 📎 Example
+
+Clear 2nd bit of 7 → `0111 & ~(0100)` = `0011` → Output: `3`
+
+---
+
+## 4️⃣ Count Number of Set Bits
+
+### 🔹 (a) Using Modulus (for binary-like decimal)
+
+```java
+int n = 10111; // decimal representation of binary digits
+int count = 0;
+while (n > 0) {
+    int ld = n % 10;
+    if (ld == 1) count++;
+    n /= 10;
+}
+System.out.println(count);
+```
+
+**Output:** `4`
+
+---
+
+### 🔹 (b) Using Bitwise Operators
+
+```java
+int n = 30; // binary = 11110
+int count = 0;
+
+while (n > 0) {
+    if ((n & 1) == 1) count++;
+    n >>= 1;
+}
+System.out.println(count);
+```
+
+**Output:** `4`
+
+---
+
+### 🔹 (c) Brian Kernighan's Algorithm
+
+```java
+int n = 30;
+int count = 0;
+
+while (n > 0) {
+    n = n & (n - 1);
+    count++;
+}
+System.out.println(count);
+```
+
+**Output:** `4`
+
+---
+
+## 5️⃣ Toggle the ith Bit
+
+### 📌 Code
+
+```java
+int n = 5; // 0101
+int i = 1;
+
+n = n ^ (1 << i);
+System.out.println(n);
+```
+
+### 📎 Example
+
+Toggle 1st bit of 5 → `0101 ^ 0010 = 0111` → Output: `7`
+
+---
+
+## 🚀 Summary Table
+
+| Operation      | Code Syntax                                           |            |
+| -------------- | ----------------------------------------------------- | ---------- |
+| Check ith bit  | `(n & (1 << i)) != 0`                                 |            |
+| Set ith bit    | \`n = n                                               | (1 << i)\` |
+| Clear ith bit  | `n = n & ~(1 << i)`                                   |            |
+| Toggle ith bit | `n = n ^ (1 << i)`                                    |            |
+| Count set bits | `while(n > 0) { n & 1; n>>=1; }` or `Brian Kernighan` |            |
+
+---
+
+## 📚 License
+
+This repository is licensed under the MIT License.
+
+---
+
+## 🤝 Contributing
+
+Pull requests and feedback are welcome! Feel free to fork and improve.
+
+```
+
+---
+
+Let me know if you'd like:
+- A matching Java `.java` file too ✅  
+- Or I can push this to a GitHub repo for you if you provide access ✍️
+```

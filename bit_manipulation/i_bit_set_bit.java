@@ -6,7 +6,7 @@ public class i_bit_set_bit {
 
         int ans = 1<<i;
 
-        // System.out.println(ans); //1<<i
+        System.out.println(ans); //1<<i
 
         int binary = 0;
         int place = 1;
@@ -17,8 +17,9 @@ public class i_bit_set_bit {
             place*=10;
             ans/=2;
         }
-        System.out.print(binary); // 4--> 100
+        System.out.println(binary); // 8--> 1000
 
+        System.out.println(n&binary);
         if((n&binary)!=0){
             System.out.print("SET!");
         }else{
