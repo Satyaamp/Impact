@@ -190,7 +190,7 @@ Here is a complete **GitHub README.md** file for **Bit Manipulation in Java**, c
 
 ---
 
-### ✅ `README.md` – Bit Manipulation in Java
+###  Bit Manipulation in Java
 
 ````markdown
 # 🧠 Bit Manipulation in Java
