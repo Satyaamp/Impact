@@ -193,9 +193,6 @@ System.out.println(Integer.MAX_VALUE);  // 2147483647
 ```
 ---
 
-###  Bit Manipulation in Java
-
-````markdown
 # 🧠 Bit Manipulation in Java
 
 Bit manipulation is a powerful technique in competitive programming and system-level development. It allows you to perform operations directly on the bits of integers, making computations faster and memory efficient.
