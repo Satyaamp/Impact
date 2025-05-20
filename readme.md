@@ -462,3 +462,163 @@ int result = n << 1;  // same as n * 2
 
 ---
 
+````markdown
+# 📘 Java Strings  
+**Date:** 20-05-25  
+
+---
+
+## 🔹 Definition
+- In Java, `String` is **not just a data type**, it's also a **class**.
+- Strings are **immutable** → cannot be modified after creation.
+  > But changes can be done using built-in classes like `StringBuilder`, `StringBuffer`.
+
+---
+
+## 🔹 Declaration
+
+```java
+String sr = "";
+String sr = new String(); // also valid
+````
+
+---
+
+## 🔹 Taking Input from User
+
+```java
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+String sr = sc.nextLine();
+```
+
+---
+
+## 🔹 Memory in Java for Strings
+
+| Type | Description                        |
+| ---- | ---------------------------------- |
+| Heap | Where new objects are stored       |
+| Pool | Optimized area for storing strings |
+
+### Example:
+
+```java
+String s = "Satyam";
+String s1 = "Satyam";
+String v1 = new String("Satyam");
+String v2 = new String("Satyam");
+
+System.out.println(s == s1);   // true (same pool memory)
+System.out.println(s == v1);   // false (heap vs pool)
+System.out.println(v1 == v2);  // false (different heap objects)
+```
+
+✅ Use `.equals()` for comparing **values**, not `==`.
+
+---
+
+## 🔹 Common String Methods
+
+```java
+String s = "Satyam";
+
+System.out.println(s.charAt(0));       // S  
+System.out.println(s.indexOf("s"));    // -1 (case-sensitive)  
+System.out.println(s.concat(" parul best student"));  
+System.out.println(s.length());        // 6  
+System.out.println(s.contains("l"));   // false  
+System.out.println(s.toLowerCase());   // satyam  
+System.out.println(s.toUpperCase());   // SATYAM  
+System.out.println(s.repeat(2));       // SatyamSatyam  
+System.out.println(s.endsWith("yam")); // true  
+System.out.println(s.startsWith("Sat")); // true  
+System.out.println(s.trim());  
+System.out.println(s.hashCode());  
+System.out.println(s.toCharArray());  
+```
+
+---
+
+## 🔹 `.equals()` vs `==`
+
+* `==` compares reference/address.
+* `.equals()` compares actual string content.
+
+---
+
+## 🔹 Mutable Strings in Java
+
+| Class         | Use Case        | Thread-Safety | Performance |
+| ------------- | --------------- | ------------- | ----------- |
+| StringBuilder | Single-threaded | ❌             | Fast        |
+| StringBuffer  | Multi-threaded  | ✅             | Slower      |
+
+---
+
+## 🔹 String Coding Questions
+
+### ✅ Q1. Count Frequency of Character
+
+```java
+Scanner sc = new Scanner(System.in);
+String sr = sc.nextLine();
+char ch = sc.next().charAt(0);
+
+int count = 0;
+for (int i = 0; i < sr.length(); i++) {
+    if (sr.charAt(i) == ch) count++;
+}
+System.out.println(count);
+```
+
+---
+
+### ✅ Q2. Palindrome Check
+
+```java
+String sr = "Anna", empty = "";
+for (int i = sr.length() - 1; i >= 0; i--) {
+    empty += sr.charAt(i);
+}
+if (sr.equalsIgnoreCase(empty)) {
+    System.out.println("Palindrome");
+} else {
+    System.out.println("Not Palindrome");
+}
+```
+
+---
+
+### ✅ Q3. Count Number of Vowels
+
+```java
+String sr = "Satyam";
+String vowels = "aeiouAEIOU";
+int count = 0;
+
+for (int i = 0; i < sr.length(); i++) {
+    if (vowels.indexOf(sr.charAt(i)) != -1) count++;
+}
+System.out.println(count);
+```
+
+---
+
+### ✅ Q4. Find Smallest Missing Character
+
+```java
+Scanner sc = new Scanner(System.in);
+String sr = sc.nextLine();
+String alpha = "abcdefghijklmnopqrstuvwxyz";
+
+for (int i = 0; i < alpha.length(); i++) {
+    char ch = alpha.charAt(i);
+    if (sr.toLowerCase().indexOf(ch) == -1) {
+        System.out.println(ch);
+        break;
+    }
+}
+```
+---

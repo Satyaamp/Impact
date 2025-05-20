@@ -1,8 +1,7 @@
-
 public class non_repeated_element {
     public static void main(String[] args) {
 
-        int arr[]={};
+        int arr[]={12,11,12};
 
         int res= arr[0];
 
@@ -12,7 +11,6 @@ public class non_repeated_element {
 
         System.out.println(res);
         
-
 
 
 
