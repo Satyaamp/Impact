@@ -1,0 +1,6 @@
+# Ignore all class files
+*.class
+
+# You can add other ignores if needed
+# e.g., ignore IDE config files or folders:
+.vscode/
