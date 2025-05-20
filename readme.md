@@ -462,7 +462,6 @@ int result = n << 1;  // same as n * 2
 
 ---
 
-````markdown
 # 📘 Java Strings  
 **Date:** 20-05-25  
 
