@@ -480,7 +480,7 @@ int result = n << 1;  // same as n * 2
 String sr = "";
 String sr = new String(); // also valid
 ````
-
+````
 ---
 
 ## 🔹 Taking Input from User

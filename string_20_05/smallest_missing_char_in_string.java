@@ -12,7 +12,7 @@ public class smallest_missing_char_in_string {
         // }
 
         String alpha ="abcdefghijklmnopqrstuvwxyz";
-        
+    
         for(int i =0;i<alpha.length();i++){
             char ch = alpha.charAt(i);
             if(sr.toLowerCase().indexOf(ch)==-1){
