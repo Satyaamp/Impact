@@ -13,6 +13,7 @@ public class str {
         // System.out.println(s.equals(v1));
 
         //Most common methods
+        
         System.out.println(s.charAt(0));//S
         System.out.println(s.indexOf("s"));//0
         System.out.println(s.concat(" parul best student")); //Satyam parul best student
@@ -31,6 +32,12 @@ public class str {
         StringBuilder sat = new StringBuilder(s);
         System.out.println(sat.delete(0,2));
         
+
+        char ch ='A';
+        char ch2 ='5';
+
+        System.out.println(Character.isDigit(ch));//true
+        System.out.println(Character.isDigit(ch2));//true
 
     }
 }

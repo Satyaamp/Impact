@@ -558,7 +558,7 @@ System.out.println(s.toCharArray());
 
 ## 🔹 String Coding Questions
 
-### ✅ Q1. Count Frequency of Character
+###  Q1. Count Frequency of Character
 
 ```java
 Scanner sc = new Scanner(System.in);
@@ -574,7 +574,7 @@ System.out.println(count);
 
 ---
 
-### ✅ Q2. Palindrome Check
+###  Q2. Palindrome Check
 
 ```java
 String sr = "Anna", empty = "";
@@ -590,7 +590,7 @@ if (sr.equalsIgnoreCase(empty)) {
 
 ---
 
-### ✅ Q3. Count Number of Vowels
+###  Q3. Count Number of Vowels
 
 ```java
 String sr = "Satyam";
@@ -605,7 +605,7 @@ System.out.println(count);
 
 ---
 
-### ✅ Q4. Find Smallest Missing Character
+###  Q4. Find Smallest Missing Character
 
 ```java
 Scanner sc = new Scanner(System.in);
@@ -621,3 +621,65 @@ for (int i = 0; i < alpha.length(); i++) {
 }
 ```
 ---
+
+
+# 22-05-2025
+
+## Q. count_all_possible_substrings
+
+```java
+
+```
+
+
+
+
+
+##  Q. Leetcode 392 --> isSubsequence
+
+```java
+        String s = sc.nextLine();
+        String t = sc.nextLine();
+
+        int i = 0;
+        int j = 0;
+
+        while(i<s.length() && j<t.length()){
+            if(s.charAt(i) == t.charAt(j)){
+                i++;
+            }
+            j++;
+        }
+
+        // System.out.println(i);
+        
+        if(i == s.length())
+        System.out.println("true");
+        else
+        System.out.println("false");
+```
+
+##  Q. Leetcode 796 --> String Rotate
+
+```java
+        String s = "abcde";
+        String goal = "cdeab";
+
+        if(s.length()!=goal.length()){
+            System.out.println("false");
+        }
+
+        String sr = s+s;
+        // System.out.println(sr);
+         
+        if(sr.contains(goal)){
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }
+```
+
+
+24/05/2025
+
+Q. Seach element in 2D-Matrix
