@@ -526,7 +526,8 @@ String s = "Satyam";
 System.out.println(s.charAt(0));       // S  
 System.out.println(s.indexOf("s"));    // -1 (case-sensitive)  
 System.out.println(s.concat(" parul best student"));  
-System.out.println(s.length());        // 6  
+System.out.println(s.length());        // 6
+System.out.println(s.replace("target", "replacement"); 
 System.out.println(s.contains("l"));   // false  
 System.out.println(s.toLowerCase());   // satyam  
 System.out.println(s.toUpperCase());   // SATYAM  
